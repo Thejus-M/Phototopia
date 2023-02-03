@@ -3,7 +3,7 @@
 
 
 {% block title %}
-Home page
+Login page
 {% endblock title %}
 
 {% block style %}
@@ -12,13 +12,10 @@ Home page
 
 
 {% block contents %}
-
-
-Basic setup donevfd
-<br>
-{{ view.extra_content.RandomNumber }}
-
-<br>
-number in here
+<h1>Login</h1>
+<form action="" method="post">
+  {% csrf_token %}
+  <button type="submit">Submit</button>
+</form>
 
 {% endblock contents %}
