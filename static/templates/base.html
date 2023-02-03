@@ -20,7 +20,19 @@
 
 <body>
 
-
+  <button>
+    <a href="{% url 'home' %}">Home</a>
+  </button>
+  <br>
+  <button>
+    <a href="{% url 'login' %}">'login'</a>
+  </button><br>
+  <button>
+    <a href="{% url 'logout' %}">'logout'</a>
+  </button><br>
+  <button>
+    <a href=""></a>
+  </button><br><br>
   This is the body of the main html file <br>
   {% block contents %}
   

@@ -13,3 +13,6 @@ class HomeView(TemplateView):
 class LoginInterfaceView(LoginView):
     template_name = "home/login.html"
 
+class LogoutInferfaceView(LoginRequiredMixin,LogoutView):
+    template_name =  "home/logout.html"
+    login_url = '/login'
