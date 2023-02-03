@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from .download_ranpic import download_random_image
 
 class Picture(models.Model):
   """Model definition for Pictures."""
@@ -18,7 +19,7 @@ class Picture(models.Model):
 
   def __str__(self):
     """Unicode representation of Pictures."""
-    return f" {self.user} id-{self.picture_like} "
+    return f" {self.user} id-{self.pic} "
 
 
 class UserInfo(models.Model):
@@ -28,7 +29,7 @@ class UserInfo(models.Model):
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   user_info_id = models.AutoField(primary_key=True)
   user_pic = models.ManyToManyField(Picture)
-  profile_picture = models.ImageField(upload_to='user_images')
+  profile_picture = models.ImageField(upload_to='user_images', default=download_random_image())
 
   class Meta:
     """Meta definition for UserInfo."""
@@ -37,4 +38,4 @@ class UserInfo(models.Model):
     verbose_name_plural = 'UserInfos'
 
   def __str__(self):
-    return f"{self.user} id-{self.user_info_id}"
+    return f"{self.user} id-{self.profile_picture}"
