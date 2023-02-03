@@ -1,5 +1,8 @@
 from django.shortcuts import render
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView,ListView,CreateView,UpdateView
+from django.contrib.auth.views import LoginView, LogoutView
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic.edit import DeleteView
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 class HomeView(TemplateView):
@@ -7,7 +10,6 @@ class HomeView(TemplateView):
     extra_content={"RandomNumber":"8"}
 
 
-class LoginView(LoginRequiredMixin ,TemplateView):
+class LoginInterfaceView(LoginView):
     template_name = "home/login.html"
-    login_url='/admin'
 
