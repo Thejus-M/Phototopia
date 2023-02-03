@@ -6,6 +6,7 @@ django-dotenv==1.4.2
 isort==5.12.0
 lazy-object-proxy==1.9.0
 mccabe==0.7.0
+Pillow==9.4.0
 platformdirs==2.6.2
 pylint==2.16.1
 sqlparse==0.4.3
