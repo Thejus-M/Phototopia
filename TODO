@@ -1,6 +1,7 @@
 Todo:
-  ☐ User can create account and login
-  ☐ login and logout
+  ✔ User can create account and login @done(23-02-03 15:32)
+  ✔ login and logout @done(23-02-03 15:32)
+  ☐ Create models for the project
   ☐ User can upload photos
   ☐ User can download photos
   ☐ User can create a private sharing link
@@ -12,6 +13,8 @@ Todo:
   ☐ comment feature
   ☐ sorting by time
   ☐ removing metadata feature
+  ☐ Create a webapp
+  ☐ Add 2fa
   ☐ Sharing a collection of images
   ☐ upload and viewing photo of the day
 
