@@ -1,6 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
-from .download_ranpic import download_random_image
+from .download_ranpic import download_random_image,generate_random_string
 
 class Picture(models.Model):
   """Model definition for Pictures."""
@@ -8,8 +8,8 @@ class Picture(models.Model):
   # TODO: Define fields here
   user = models.ForeignKey(User, on_delete=models.CASCADE)
   picture_id = models.AutoField(primary_key=True)
-  picture_like = models.IntegerField()
-  picture_random_code = models.BigIntegerField()
+  picture_like = models.IntegerField(default=0)
+  picture_random_code = models.CharField(max_length=20, default=generate_random_string(10))
   pic = models.ImageField(upload_to='photos')
   class Meta:
     """Meta definition for Pictures."""
